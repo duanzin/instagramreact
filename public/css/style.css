@@ -101,10 +101,6 @@ body {
   overflow: hidden;
   position: relative;
 }
-.stories ul{
-  display: flex;
-  flex-direction: row;
-}
 
 .story {
   display: flex;
