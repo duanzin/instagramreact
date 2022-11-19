@@ -30,13 +30,14 @@ export default function Sugestoes() {
   ];
 
   return (
-    <div class="sugestoes">
-      <div class="titulo">
+    <div className="sugestoes">
+      <div className="titulo">
         Sugestões para você
         <div>Ver tudo</div>
       </div>
         {itens.map((item) => (
           <Sugestao
+            key={item.username}
             userimg={item.userimg}
             username={item.username}
             razao={item.razao}

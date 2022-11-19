@@ -14,16 +14,19 @@ const itens = [
   { imagem: "assets/img/memeriagourmet.svg", nomeusuario: "memeriagourmet" },
 ];
 
-
 export default function Stories() {
-    return (
-      <div class="stories">
-        {itens.map((item) => (
-            <Story imagem = {item.imagem} nomeusuario = {item.nomeusuario}/>
-        ))}
-        <div class="setinha">
-          <ion-icon name="chevron-forward-circle"></ion-icon>
-        </div>
+  return (
+    <div className="stories">
+      {itens.map((item) => (
+        <Story
+          key={item.nomeusuario}
+          imagem={item.imagem}
+          nomeusuario={item.nomeusuario}
+        />
+      ))}
+      <div className="setinha">
+        <ion-icon name="chevron-forward-circle"></ion-icon>
       </div>
-    );
-  }
+    </div>
+  );
+}
