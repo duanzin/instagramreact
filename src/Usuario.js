@@ -4,19 +4,21 @@ export default function Usuario(props) {
   const [name, setname] = react.useState(props.nomeusuario);
   const [imagem, setimg] = react.useState(props.pfp);
 
-  function mudanome() {
-    const novonome = prompt("digite o novo nome");
-    setname(novonome);
+  if (!name) {
+    setname(prompt("digite o novo nome"));
   }
 
-  function mudaimg() {
-    const novapfp = prompt("cole o link da nova imagem");
-    setimg(novapfp);
+  if (!imagem) {
+    setimg(prompt("cole o link da nova imagem"));
   }
 
   return (
     <div className="usuario" data-test="user">
-      <img src={imagem} data-test="profile-image" onClick={mudaimg} />
+      <img
+        src={imagem}
+        data-test="profile-image"
+        onClick={() => setimg(prompt("cole o link da nova imagem"))}
+      />
       <div className="texto">
         <strong>{props.nomestrong}</strong>
         <span data-test="name">
@@ -24,7 +26,7 @@ export default function Usuario(props) {
           <ion-icon
             data-test="edit-name"
             name="pencil"
-            onClick={mudanome}
+            onClick={() => setname(prompt("digite o novo nome"))}
           ></ion-icon>
         </span>
       </div>
